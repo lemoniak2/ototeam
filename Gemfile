@@ -19,6 +19,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'sorcery'
 gem 'decent_exposure'
+gem 'draper'
 
 group :development do
   gem 'guard-rails', '~> 0.5.0'

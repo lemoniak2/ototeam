@@ -2,9 +2,12 @@ class GroupsController < ApplicationController
   before_filter :require_login
   expose(:group, attributes: :group_params)
   expose(:groups, ancestor: :current_user)
+  expose(:group_creator) {GroupCreator.new(self)}
+  expose(:decorated_group){ group.decorate }
+  expose(:decorated_groups){ groups.decorate }
 
   def create
-    if group.save
+    if group_creator.save
       redirect_to group, notice: 'Group was successfully created.'
     else
       render action: 'new'
