@@ -1,6 +1,13 @@
 Ototeam::Application.routes.draw do
   root 'events#index'
   resources :events
+  resources :users, except: :index
+  # --- Sessions ---
+  resources :sessions, only: :create
+  get "logout" => "sessions#destroy", as: :logout
+  get "login" => "sessions#new", as: :login
+  get "signup" => "users#new", as: :signup
+  #------------------
   resources :friends
   resources :groups
   resources :slides, only: %i(index show)

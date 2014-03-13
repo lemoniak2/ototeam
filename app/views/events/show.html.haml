@@ -1,28 +1,28 @@
 .page-header
   = icon_link_to 'list-alt', 'Back', events_path, class: 'btn btn-default'
-  = icon_link_to :pencil, 'Edit', edit_event_path(@event), class: 'btn btn-primary'
+  = icon_link_to :pencil, 'Edit', edit_event_path(event), class: 'btn btn-primary'
   %h1 Show event
 
 %dl.dl-horizontal
   %dt State:
-  %dd= @event.state
+  %dd= event.state
   %dt Name:
-  %dd= @event.name
+  %dd= event.name
   %dt Description:
-  %dd= @event.description
+  %dd= event.description
   %dt Start at:
-  %dd= @event.start_at
+  %dd= event.start_at
   %dt Invite from:
-  %dd= @event.invite_from
+  %dd= event.invite_from
   %dt Invite to:
-  %dd= @event.invite_to
+  %dd= event.invite_to
   %dt Attendees min count:
-  %dd= @event.attendees_min_count
+  %dd= event.attendees_min_count
   %dt Attendees max count:
-  %dd= @event.attendees_max_count
+  %dd= event.attendees_max_count
   %dt Minutes for answer:
-  %dd= @event.minutes_for_answer
+  %dd= event.minutes_for_answer
   %dt Public attendees list:
-  %dd= @event.public_attendees_list
+  %dd= event.public_attendees_list
   %dt Creator:
-  %dd= @event.creator_id
+  %dd= event.creator_id

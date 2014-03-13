@@ -34,10 +34,12 @@
             %li
               = link_to 'Groups', groups_path
           %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to 'Profile', '#'
-            %li
-              = link_to 'Logout', '#'
+            - if current_user
+              %li= link_to "Logout", logout_path
+              %li= link_to current_user.email, current_user
+            - else
+              %li= link_to "Sign in", login_path
+              %li= link_to "Sign up", signup_path
     .container
       = render 'shared/flash_messages'
       = yield

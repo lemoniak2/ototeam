@@ -1,4 +1,8 @@
 class Event < ActiveRecord::Base
+  belongs_to :user, foreign_key: "creator_id"
+  has_many :event_participants
+  has_many :friends, through: :event_participants
+  #has_many: :user_events
   before_validation :fill_invite_from, unless: :invite_from
   before_validation :fill_invite_to, unless: :invite_to
   validates :name, :start_at, :minutes_for_answer, presence: true

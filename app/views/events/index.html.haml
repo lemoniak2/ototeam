@@ -2,6 +2,14 @@
   = icon_link_to :plus, 'New Event', new_event_path, class: 'btn btn-primary'
   %h1 Listing events
 
+
+= search_form_for q do |f|
+  = f.label :name_cont
+  = f.text_field :name_cont
+  = f.label :description_cont
+  = f.text_field :description_cont
+  = f.submit
+
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
@@ -15,4 +23,6 @@
         %th Actions
 
     %tbody
-      = render @events
+      = render events
+
+= paginate events

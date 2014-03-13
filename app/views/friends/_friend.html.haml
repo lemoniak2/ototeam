@@ -2,7 +2,10 @@
   %td= friend.fullname
   %td= friend.email
   %td= friend.phone
-  %td= friend.group_names
+  %td
+    - friend.groups.each do |g|
+      = link_to g.name+", ", g
+  %td Empty
   %td= friend.attendance_percentage
   %td
     = link_to 'Show', friend

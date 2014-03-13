@@ -15,6 +15,10 @@ gem 'bootstrap-generators', '~> 3.1.0'
 gem 'bootstrap-sass', '~> 3.1.0'
 gem 'haml-rails', '~> 0.5.3'
 gem 'simple_form', '~> 3.0.1'
+gem 'ransack'
+gem 'kaminari'
+gem 'sorcery'
+gem 'decent_exposure'
 
 group :development do
   gem 'guard-rails', '~> 0.5.0'
